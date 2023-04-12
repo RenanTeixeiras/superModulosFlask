@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block conteudo%}
+
+<form action="{{ url_for('tarefas') }}" method="POST">
+    <input type="text" name="tarefa" placeholder="Tarefa: ">
+    <input type="datetime" name="prazo" placeholder="prazo">
+    <input type="radio" name="prioridade" value="ALTA">
+    <label for="ALTA">ALTA</label>
+    <input type="radio" name="prioridade" value="MÉDIA">
+    <label for="MÉDIA">MÉDIA</label>
+    <input type="radio" name="prioridade" value="BAIXA">
+    <label for="BAIXA">BAIXA</label>
+    <input type="submit" value="Cadastrar Tarefa">
+</form>
+
+<br><br><br><br><br>
+
+<table border="1">
+    <tr>
+        <th>ID da Tarefa</th>
+        <th>Título da Tarefa</th>
+        <th>Data de Registro</th>
+        <th>Prazo de Finalização</th>
+        <th>Grau de Prioridade</th>
+    </tr>
+{% for tarefa in tarefas %}
+<tr>
+    <td>{{ tarefa.id_tarefa }}</td>
+    <td>{{ tarefa.titulo_tarefa }}</td>
+    <td>{{ tarefa.hora_tarefa }}</td>
+    <td>{{ tarefa.prazo_tarefa }}</td>
+    <td>{{ tarefa.prioridade }}</td>
+    <td><a href="{{ url_for('deletar_tarefa', id=tarefa.id_tarefa) }}" style="text-decoration: none; color:red;">[ x ]</a></td>
+</tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}
