@@ -11,18 +11,20 @@
     }
 
     .container {
+        width: 900px;
+        margin-inline: auto;
         position: relative;
         top: 50%;
-        left: 50%;
+        left: 12%;
         transform: translate(-50%, -50%);
     }
 
     table {
-        width: 1000px;
+        width: 900px;
+        margin-inline: auto;
         border-collapse: collapse;
         overflow: hidden;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        margin-top: 30px;
     }
 
     th,
@@ -69,7 +71,7 @@
         border: 2px solid;
         display: flex;
         flex-direction: column;
-        width: 300px;
+        width: 900px;
         margin-inline: auto;
         margin-top: 200px;  
         padding: 10px;
@@ -89,4 +91,10 @@
         margin-bottom: 30px;
         background-color: #55608f; /* Adicione uma cor de fundo para garantir que o texto seja legível */
         /* Outras propriedades da navbar (se houver) */
+    }
+
+    .input-radio{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
